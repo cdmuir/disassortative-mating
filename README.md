@@ -11,18 +11,18 @@ This repository has the following file folders:
 - `objects`: saved objects generated from *R* code
 - `ms`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files
 - `python`: Python scripts for all data processing and analysis
-  + `check_genotype_frequencies.py` checks that genotype frequencies sum to 1 when only $kk$ and $K-$ genotypes are considered
-  + `check_genotype_frequencies1.py` checks that genotype frequencies sum to 1 when $kk$, $Kk$, and $KK$ genotypes are considered
-  + `derive_genotype_frequencies.py` derives genotype frequencies for $kk$ and $K-$
-  + `derive_genotype_frequencies1.py` derives genotype frequencies for $kk$, $Kk$, and $KK$ 
+  + `check_genotype_frequencies.py` checks that genotype frequencies sum to 1 when only *kk* and *K-* genotypes are considered
+  + `check_genotype_frequencies1.py` checks that genotype frequencies sum to 1 when *kk*, *Kk*, and *KK* genotypes are considered
+  + `derive_genotype_frequencies.py` derives genotype frequencies for *kk* and *K-*
+  + `derive_genotype_frequencies1.py` derives genotype frequencies for *kk*, *Kk*, and *KK* 
   + `derive_progency_frequencies.py` derives progeny frequencies
-  + `find_equilibrium.py` solves for $Q$ at equilibrium
+  + `find_equilibrium.py` solves for *Q* at equilibrium
   + `get-sympy-version.pr` gets SymPy version
   + `simplify_genotype_frequencies.py` simplifies genotype frequencies for Table 2
 - `r`: *R* scripts for all data processing and analysis
   + `01_check-genotype-frequencies.R` derives genotype frequencies as in Table 1 of Hedrick *et al.* (2016)
   + `02_check-progeny-frequencies.R` derives progeny frequencies as in Table 1 of Hedrick *et al.* (2016) and finds equilibrium
-  + `03_make-fig.R` compares equilibrium for $Q$ in Hedrick *et al.* (2016) and this study
+  + `03_make-fig.R` compares equilibrium for *Q* in Hedrick *et al.* (2016) and this study
   + `04_write-bib.R` writes the bib file
   + `function.R` contains custom functions
   + `header.R` is a header file for *R* scripts
