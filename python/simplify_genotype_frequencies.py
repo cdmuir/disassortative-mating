@@ -1,0 +1,10 @@
+from sympy import simplify, symbols
+A, P = symbols('A P')
+p1 = simplify((1 - P) * A * 0)
+p2 = simplify((1 - P) * A * 1)
+p3 = simplify((1 - P) * (1 - A) * (1 - P))
+p4 = simplify((1 - P) * (1 - A) * P)
+p5 = simplify(P * A * 1)
+p6 = simplify(P * A * 0)
+p7 = simplify(P * (1 - A) * (1 - P))
+p8 = simplify(P * (1 - A) * P)
