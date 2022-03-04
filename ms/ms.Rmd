@@ -50,7 +50,7 @@ tribble(
 
 For consistency, I use the same symbols as @hedrick_negative-assortative_2016 (Table \@ref(tab:symbols) lists all symbols and their definitions). I used Sympy version `r sympy_version` [@meurer_sympy:_2017] for symbolic derivations through Python version `r py_info[["version"]]` and the *R* package **reticulate** version `r pkg_info["reticulate"]` [@ushey_reticulate_2022]. All other computations were performed in *R* version `r getRversion()` [@r_core_team_r_2021]. I have provided my source code for review and will deposit my code in public GitHub and Zenodo repositories upon publication.
 
-In @hedrick_negative-assortative_2016, the frequency of gray $\times$ black matings is incorrectly written as $2 P (H + Q)$ (*cf* Table 1). However, this value does not account for all possible outcomes that result in Gray $\times$ black matings (Table \@ref(tab:probabilities)). As a result, the genotype frequencies (Table \@ref(tab:genotypes)) do not sum to 1 as they should if they account for all possible outcomes. Ironically, I found an analogous derivation in @hedrick_population_2012 for positive-assortative mating where the genotype frequencies do sum to 1 when ignoring other evolutionary forces such as selection. The correct expression derived by summing all ways gray $\times$ black matings can occur is provided in Table \@ref(tab:genotypes). The corrected genotype frequencies sum to 1 as expected (see code for analytical derivation in Supporting Information).
+In @hedrick_negative-assortative_2016, the frequency of gray $\times$ black matings is incorrectly written as $2 P (H + Q)$ (*cf* Table 1). However, this value does not account for all possible outcomes that result in gray $\times$ black matings (Table \@ref(tab:probabilities)). As a result, the genotype frequencies (Table \@ref(tab:genotypes)) do not sum to 1 as they should if they account for all possible outcomes. Ironically, I found an analogous derivation in @hedrick_population_2012 for positive-assortative mating where the genotype frequencies do sum to 1 when ignoring other evolutionary forces such as selection. The correct expression derived by summing all ways gray $\times$ black matings can occur is provided in Table \@ref(tab:genotypes). The corrected genotype frequencies sum to 1 as expected (see code for analytical derivation in Supporting Information).
 
 ```{r, probabilities}
 
@@ -74,7 +74,7 @@ read_rds("objects/table1_genotypes.rds") |>
     `Parent 1` == "$K-$" & `Parent 2` == "$kk$" ~ "Gray $\\times$ black",
     `Parent 1` == "$K-$" & `Parent 2` == "$K-$" ~ "Black $\\times$ black",
   )) |>
-  knitr::kable(format = "markdown", caption = "The probability of every mating outcome in the negative-assortative mating model analyzed by Hedrick *et al.* (2016).", align = "llllllll")
+  knitr::kable(format = "markdown", caption = "The probability of every mating outcome in the negative-assortative mating model analyzed by Hedrick *et al.* (2016). For the notation, the probability of event *X* is Pr[*X*]. The total probabilities for each row are derived from the product of all probabilities in the same row, Pr[Total] = Pr[Parent 1] $\\times$ Pr[Mating] $\\times$ Pr[Parent 2].", align = "llllllll")
 
 ```
 
@@ -104,6 +104,6 @@ ggplot(df_fig, aes(A, Q, linetype = Source)) +
 
 ```
 
-In conclusion, the mathematical errors in @hedrick_negative-assortative_2016 do not undermine their primary conclusion that negative-assortative mating by color may explain the distribution of genotype frequencies at the beta definsin locus in the Yellowstone population of wolves (*Canis lupus*). The derivation here may prove useful to future research on detecting evidence for negative-assortative mating.
+In conclusion, the mathematical error in @hedrick_negative-assortative_2016 does not undermine their primary conclusion that negative-assortative mating by color may explain the distribution of genotype frequencies at the beta definsin locus in the Yellowstone population of wolves (*Canis lupus*). The derivation here may prove useful to future research on negative-assortative mating.
 
 # Literature cited
