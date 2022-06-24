@@ -25,4 +25,4 @@ mutate(
   p = P + H / 2
 )
 
-write_rds(bind_rows(df1, df2), "objects/fig.rds")
+write_rds(bind_rows(df1, df2), "objects/fig2.rds")

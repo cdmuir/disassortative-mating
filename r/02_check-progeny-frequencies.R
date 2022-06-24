@@ -157,16 +157,16 @@ write_lines(c(
 ), file = "python/derive_progeny_frequencies.py")
 
 source_python("python/derive_progeny_frequencies.py")
-ret
-p_kk
-p_Kk
-p_KK
-delta_P
-delta_H
-delta_Q
-
-soln_Q
-soln_p # only internal solution is where H + Q = 0.5
+# ret
+# p_kk
+# p_Kk
+# p_KK
+# delta_P
+# delta_H
+# delta_Q
+# 
+# soln_Q
+# soln_p # only internal solution is where H + Q = 0.5
 
 write_lines(c(
   "from sympy import simplify, solve, symbols",

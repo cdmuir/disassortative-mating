@@ -2,6 +2,7 @@ rm(list = ls())
 
 source("r/functions.R")
 
+library(checkmate)
 library(cowplot)
 library(dplyr)
 library(furrr)
@@ -13,3 +14,5 @@ library(reticulate)
 library(stringr)
 library(tibble)
 library(tidyr)
+
+theme_set(theme_cowplot())
