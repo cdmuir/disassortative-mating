@@ -179,3 +179,8 @@ write_lines(c(
 
 source_python("python/find_equilibrium.py")
 soln_Q # only one root has a positive value
+
+# Find max(A) as a function of P
+source_python("python/find_max_A.py")
+soln_max_A1
+soln_max_A2

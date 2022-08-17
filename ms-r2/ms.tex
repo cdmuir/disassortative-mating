@@ -34,17 +34,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={Technical comment on `Negative-assortative mating for color in wolves'},
-  colorlinks=true,
-  linkcolor={blue},
-  filecolor={Maroon},
-  citecolor={Blue},
-  urlcolor={Blue},
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -97,15 +86,26 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{setspace}
-% \onehalfspacing
+\onehalfspacing
 
 \usepackage{lineno}
-% \linenumbers
+\linenumbers
 
 \usepackage{amsmath}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Technical comment on `Negative-assortative mating for color in wolves'},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
 
 \title{Technical comment on `Negative-assortative mating for color in wolves'}
 \author{}
@@ -142,8 +142,8 @@ I am critiquing only their model, not the data analysis or conclusions. Both the
 Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) assume that a proportion \(A\) matings are assortative, but the proportion they derive is much less (see Fig. \ref{fig:sample-space} for a graphical derivation). For consistency, I use the same symbols as Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) (Table \ref{tab:symbols} lists all symbols and their definitions). I infer three key assumptions from the two statements on the bottom-left of pg. 758 of Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}):
 
 \begin{quote}
-``gray wolves have a genotype of \(kk\) and an assumed frequency of \(P\) and black
-wolves have genotypes \(Kk\) and \(KK\) with frequencies \(H\) and \(Q\), respectively \((P + H + Q = 1)\).''
+``gray wolves have a genotype of \(\mathit{kk}\) and an assumed frequency of \(P\) and black
+wolves have genotypes \(\mathit{Kk}\) and \(\mathit{KK}\) with frequencies \(H\) and \(Q\), respectively \((P + H + Q = 1)\).''
 \end{quote}
 
 \begin{quote}
@@ -156,14 +156,14 @@ From these statements, I infer that:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  \(kk\), \(Kk\), and \(KK\) are mutually exclusive genotypes with frequencies \(P\), \(H\), and \(Q\)
+  \(\mathit{kk}\), \(\mathit{Kk}\), and \(\mathit{KK}\) are mutually exclusive genotypes with frequencies \(P\), \(H\), and \(Q\)
 \item
   Negative-assortative mating and random mating are mutually exclusive mating types with frequencies \(A\) and \(1-A\)
 \item
   Genotype and mating type are independent (\(\mathrm{Pr}[A \cap B] = \mathrm{Pr}[A] \times \mathrm{Pr}[B]\))
 \end{enumerate}
 
-Other standard population genetic assumptions such as infinite population size also apply.
+Other model assumptions made by Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) are common in population genetics. The model is deterministic, individuals are monoecious, generations are discrete and nonoverlapping, and individuals can mate multiply. Some of these assumptions are not be valid for wolves and different assumptions could result in qualitatively different outcomes. For example, if individuals only mate in pairs, this would constrain the amount of negative assortative mating that is possible when either allele is rare. While alternative assumptions may help understand how assortative mating maintains genetic variation, my purpose here is not to critique the assumptions of Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}), but rather to show their results are not logically consistent with their stated assumptions.
 
 \begin{figure}[ht]
   \centering
@@ -179,13 +179,13 @@ Other standard population genetic assumptions such as infinite population size a
 
 \begin{longtable}[]{@{}ccl@{}}
 \caption{\label{tab:symbols}Glossary of mathematical symbols, variable string used in source code, and description.}\tabularnewline
-\toprule
+\toprule()
 Symbol & Variable string & Description \\
-\midrule
+\midrule()
 \endfirsthead
-\toprule
+\toprule()
 Symbol & Variable string & Description \\
-\midrule
+\midrule()
 \endhead
 \(k\) & \(\mathtt{k}\) & recessive beta-defensin variant \\
 \(K\) & \(\mathtt{K}\) & dominant beta-defensin variant \\
@@ -195,7 +195,7 @@ Symbol & Variable string & Description \\
 \(H\) & \(\mathtt{H}\) & frequency of \(\textit{Kk}\) genotype \\
 \(Q\) & \(\mathtt{Q}\) & frequency of \(\textit{KK}\) genotype \\
 \(A\) & \(\mathtt{A}\) & proportion negative-assortatively mating \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 Based on these assumptions, I deduce that:
@@ -236,25 +236,25 @@ Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016})
 \[ \frac{\textrm{Assortative matings}}{\textrm{Assortative} + \textrm{Random matings}} = \frac{2 A P (H + Q)}{2 A P (H + Q) + 1 - A}\]
 There are no solutions to the expression above where the proportion of negative-assortative mating would equal \(A\) when genotype and mating proportions are between 0 and 1. With their model, the actual proportion of negative-assortative would vary from 0 when \(P = 0\) or \(P = 1\) and \(A / (2 - A)\) when \(P = 0.5\).
 
-To summarize, a proportion \(A\) should mate assortatively given the assumptions of their model, but only \(2 AP(H+Q)\) actually mate assortatively according to their results. In essence, they assign a proportion \(A\) to mate assortatively, but then a proportion \(A - 2 AP(H+Q)\) do not mate assortatively (the area of the gray regions in Fig. \ref{fig:sample-space}b), and are therefore not counted among the total number of matings. This is why the probabilities of all matings do not sum to 1. The logically consistent solution is to condition on the fact that if a mating is negative-assortative it must by definition have one gray and one black parent (Fig. \ref{fig:sample-space}b). In the next section, I use this approach to derive new results. In contrast, Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) effectively impose selection without ever stating that assumption. To deal with the fact that resulting genotype frequencies do not sum to 1, they regularize the frequencies (\emph{cf} equation 1a-b), as normally done in models of selection. Regularization is appropriate with selection because selection shrinks or expands the sample space as long as average fitness does not equal 1. Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) impose selection because some of the assortative-mating individuals do not mate assortatively and are therefore not counted among the matings that result in offspring.
+To summarize, a proportion \(A\) should mate assortatively given the assumptions of their model, but only \(2 AP(H+Q)\) actually mate assortatively according to their results. In essence, they assign a proportion \(A\) to mate assortatively, but then a proportion \(A - 2 AP(H+Q)\) do not mate assortatively (the area of the gray regions in Fig. \ref{fig:sample-space}b), and are therefore not counted among the total number of matings. This is why the probabilities of all matings do not sum to 1. The logically consistent solution is to condition on the fact that if a mating is negative-assortative it must by definition have one gray and one black parent (Fig. \ref{fig:sample-space}b). In the next section, I use this approach to derive different results. In contrast, Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) effectively impose selection without ever stating that assumption. To deal with the fact that resulting genotype frequencies do not sum to 1, they regularize the frequencies (\emph{cf} equation 1a-b), as normally done in models of selection. Regularization is appropriate with selection because selection shrinks or expands the sample space as long as average fitness does not equal 1. Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) impose selection because some of the assortative-mating individuals do not mate assortatively and are therefore not counted among the matings that result in offspring.
 
 \hypertarget{revised-solutions-consistent-with-model-assumptions}{%
 \subsection{Revised solutions consistent with model assumptions}\label{revised-solutions-consistent-with-model-assumptions}}
 
-The previous section showed that the frequency of assortative gray \(\times\) black matings was not derived in a manner logically consistent with the model's assumptions. Here I derive new mating frequencies, genotype frequencies, and equilibria. I used Sympy version 1.7.1 (\protect\hyperlink{ref-meurer_sympy:_2017}{Meurer et al. 2017}) for symbolic derivations through Python version 3.6 and the \emph{R} package \textbf{reticulate} version 1.25 (\protect\hyperlink{ref-ushey_reticulate_2022}{Ushey et al. 2022}). All other computations were performed in \emph{R} version 4.2.0 (\protect\hyperlink{ref-r_core_team_r:_2022}{R Core Team 2022}). The source code is available in a public GitHub repository and will be archived on Zenodo upon publication.
+The previous section showed that the frequency of assortative gray \(\times\) black matings was not derived in a manner logically consistent with the model's assumptions. Here I derive new mating frequencies, genotype frequencies, and equilibria. This model was previously analyzed by Li (\protect\hyperlink{ref-li_first_1976}{1976}){]} where in his notation \(D = H + Q\), \(R = P\), and \(w = A\) (\emph{cf} pg. 367-368). I used Sympy version 1.8 (\protect\hyperlink{ref-meurer_sympy:_2017}{Meurer et al. 2017}) for symbolic derivations through Python version 3.6 and the \emph{R} package \textbf{reticulate} version 1.25 (\protect\hyperlink{ref-ushey_reticulate_2022}{Ushey et al. 2022}). All other computations were performed in \emph{R} version 4.2.0 (\protect\hyperlink{ref-r_core_team_r_2022}{R Core Team 2022}). The source code is available in a public GitHub repository and will be archived on Zenodo upon publication.
 
-Table \ref{tab:probabilities} derives the probabilities of all possible outcomes and Table \ref{tab:genotypes} summarizes the frequency each mating combination. This is the exact same process used to derive frequency of mating combinations in positive-assortative mating models (e.g. \protect\hyperlink{ref-hedrick_population_2012}{Hedrick and Ritland 2012}). Since I model random mating identically to the previous model, the frequencies of gray \(\times\) gray and black \(\times\) black matings are identical; only the frequency of gray \(\times\) black matings differs between models (Table \ref{tab:genotypes}; Fig. @ref\{fig:sample-space\}c).
+Table \ref{tab:probabilities} derives the probabilities of all possible outcomes and Table \ref{tab:genotypes} summarizes the frequency each mating combination. This is the exact same process used to derive frequency of mating combinations in positive-assortative mating models (e.g. \protect\hyperlink{ref-hedrick_population_2012}{Hedrick and Ritland 2012}). Since I model random mating identically to the previous model, the frequencies of gray \(\times\) gray and black \(\times\) black matings are identical; only the frequency of gray \(\times\) black matings differs between models (Table \ref{tab:genotypes}; Fig. \ref{fig:sample-space}c).
 
 Code in the Supporting Information derives the expressions in (Table \ref{tab:genotypes}) analytically using a computer algebra system, but one can also use the Law of Total Probability to prove it. The Law of Total Probability for discrete probability distributions states that \(\mathrm{Pr}[A] = \sum_i \mathrm{Pr}[A|B_i] \mathrm{Pr}[B_i]\) where \(\mathrm{Pr}[A|B_i]\) is the probability of outcome \(A\) conditional on outcome \(B_i\). The total probability of \(A\) is the sum of conditional probabilities across all outcomes for event \(B\). Using the Law of Total Probability, the probability of a gray \(\times\) black mating is:
 \[\mathrm{Pr}[\textrm{gray} \times \textrm{black}] = \mathrm{Pr}[\textrm{gray} \times \textrm{black}|\textrm{assort}] \mathrm{Pr}[\textrm{assort}] + \mathrm{Pr}[\textrm{gray} \times \textrm{black}|\textrm{random}] \mathrm{Pr}[\textrm{random}]\]
 We already assume that \(\mathrm{Pr}[\textrm{assort}] = A\) and \(\mathrm{Pr}[\textrm{random}] = 1 - A\). With random mating, I arrive at the same expression as Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}), \(\mathrm{Pr}[\textrm{gray} \times \textrm{black}|\textrm{random}] = 2P(H+Q)\) (\emph{cf} top of pg. 759). If the mating is negative-assortative, then it \emph{must} be a gray \(\times\) black mating. Therefore, \(\mathrm{Pr}[\textrm{gray} \times \textrm{black}|\textrm{assort}] = 1\). Putting these together, I obtain:
 
-\begin{align*}
-  \mathrm{Pr}[\textrm{gray} \times \textrm{black}] = & 1 \times A + 2P(H+Q) \times (1-A) \\
-  = & A + 2 P (H + Q) (1 - A)
-\end{align*}
+\begin{align}
+  \mathrm{Pr}[\textrm{gray} \times \textrm{black}] = & 1 \times A + 2P(H+Q) \times (1-A) \nonumber \\
+  = & A + 2 P (H + Q) (1 - A) \label{eq1}
+\end{align}
 
-This result diverges from that given in Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}), where they report the frequency of gray \(\times\) black matings is \(2 P (H + Q)\) (\emph{cf} Table 1).
+This result diverges from that given in Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}), where they report the frequency of gray \(\times\) black matings is \(2 P (H + Q)\) (\emph{cf} Table 1). One advantage of their result is that the frequency of assortative matings is 0 when the population is fixed at this locus (\(P = 0\) or \(H + Q = 0\)). In contrast, Eq. \ref{eq1} conjures \(A\) assortative matings from a population of wolves with identical coat color. This is a logical consequence of assuming that a proportion \(A\) mate assortatively irrespective of the allele frequency. An alternative approach is to set bounds on \(A\) as a function color morph frequency. For example, if we assume that wolves mate in monogamous pairs, then \(A\) cannot exceed twice the frequency of the rarer color morph. Consider a single black wolf in pack of 100 (\(P = 0.99\)). The maximum value of \(A\) is \(1/50\) if there is one gray \(times\) black mating and 49 gray \(times\) gray matings. More generally, the maximum value of \(A\) in a population of monogamous pairs can be found by solving Equation \ref{eq1} for \(A\) when the maximum proportion of assortative matings is the lesser of \(2P\) and \(2(1 - P)\). When grey morphs are rarer than black morphs (\(P < 0.5\)), the maximum value of \(A\) is \(2P ^ 2 / (2P ^ 2 - 2 P + 1)\); when black morphs are rarer (\(P > 0.5\)), the maximum value of \(A\) is \(2 (P^2 - 2P + 1) / (2 P ^ 2 - 2 P + 1)\). Different constraints on \(A\) apply to a population where individuals can self-fertilize and/or mate with multiple individuals. Incorporating constraints on \(A\) as a function of phenotypic frequency may be important, but the assumptions stated by Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) do not imply constraint on \(A\) when one color morph is rare.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0833}}
@@ -266,7 +266,7 @@ This result diverges from that given in Hedrick et al. (\protect\hyperlink{ref-h
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1852}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1944}}@{}}
 \caption{\label{tab:probabilities}The probability of every mating outcome in the negative-assortative mating model analyzed by Hedrick \emph{et al.} (2016). For the notation, the probability of event \emph{X} is Pr{[}\emph{X}{]}. The total probabilities for each row are derived from the product of all probabilities in the same row, Pr{[}Total{]} = Pr{[}Parent 1{]} \(\times\) Pr{[}Mating{]} \(\times\) Pr{[}Parent 2{]}.}\tabularnewline
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Parent 1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -284,9 +284,9 @@ Pr{[}Total{]}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Color
 \end{minipage} \\
-\midrule
+\midrule()
 \endfirsthead
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Parent 1
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -304,7 +304,7 @@ Pr{[}Total{]}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Color
 \end{minipage} \\
-\midrule
+\midrule()
 \endhead
 \(kk\) & \(P\) & assortative & \(A\) & \(kk\) & \(0\) & \(0\) & Gray \(\times\) gray \\
 \(kk\) & \(P\) & random & \(1 - A\) & \(kk\) & \(P\) & \(P^2 (1 - A)\) & Gray \(\times\) gray \\
@@ -314,7 +314,7 @@ Color
 \(K-\) & \(H + Q\) & random & \(1 - A\) & \(kk\) & \(P\) & \(P (H + Q) (1 - A)\) & Gray \(\times\) black \\
 \(K-\) & \(H + Q\) & assortative & \(A\) & \(K-\) & \(0\) & \(0\) & Black \(\times\) black \\
 \(K-\) & \(H + Q\) & random & \(1 - A\) & \(K-\) & \(H + Q\) & \((H + Q)^2 (1 - A)\) & Black \(\times\) black \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -323,7 +323,7 @@ Color
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3469}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2653}}@{}}
 \caption{\label{tab:genotypes}Hedrick \emph{et al.} (2016) incorrectly derive the frequency of gray \(\times\) black. The corrected expressions are provided here.}\tabularnewline
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Color
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -333,9 +333,9 @@ Frequency (Hedrick \emph{et al.} 2016)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Frequency (this paper)
 \end{minipage} \\
-\midrule
+\midrule()
 \endfirsthead
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Color
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -345,12 +345,12 @@ Frequency (Hedrick \emph{et al.} 2016)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Frequency (this paper)
 \end{minipage} \\
-\midrule
+\midrule()
 \endhead
 Gray \(\times\) gray & \(kk \times kk\) & \(P^2 (1 - A)\) & \(P^2 (1 - A)\) \\
 Gray \(\times\) black & \(kk \times K-\) & \(2 P (H + Q)\) & \(A + 2 P (H + Q) (1 - A)\) \\
 Black \(\times\) black & \(K- \times K-\) & \((H + Q) ^ 2 (1 - A)\) & \((H + Q) ^ 2 (1 - A)\) \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 Despite the different frequency of gray \(\times\) black matings resulting from each model, the equilibrium genotype frequencies are very similar. In both models, \(\hat{P} = 0.5\), implying \(0.5 = \hat{H} + \hat{Q}\). I find that \(\hat{Q} = (A / 2 - \sqrt{2 (A + 1)} + 1.5)/(1 - A)\), which is close to the equilibrium values obtained in Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) through recursion (Fig. \ref{fig:fig2}). Next, I compared allele frequency change depicted in Figs. 3-4 of Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) to that predicted with the new model. The effect of \(A\) on change in the frequency of the \(K\) allele is qualitatively similar, but much faster with the new model (Fig. \ref{fig:fig3}). This is because the magnitude of allele frequency change far from the equilibrium is much greater with the new model (Fig. \ref{fig:fig4}). As a result, Hedrick et al. (\protect\hyperlink{ref-hedrick_negative-assortative_2016}{2016}) overestimate how long it would take for \(K\) to reach equilibrium given observed levels of assortative mating (\(A = 0.430\)). They conclude that \(K\) would reach equilibrium at \(\hat{q} = 0.278\) in 25 generations with \(A = 0.430\). In the revised model, \(K\) would reach equilibrium at \(\hat{q} = 0.271\) in only 15 generations with \(A = 0.430\) and a starting allele frequency \(q_0 = 0.01\). Hence, the revised model actually lends credence to their conclusion that negative-assortative mating may be a better explanation than heterozygote advantage for variation at the beta definsin locus.
@@ -392,10 +392,13 @@ Hedrick, P. W., and K. Ritland. 2012. \href{https://doi.org/10.1111/j.1558-5646.
 \leavevmode\vadjust pre{\hypertarget{ref-hedrick_negative-assortative_2016}{}}%
 Hedrick, P. W., D. W. Smith, and D. R. Stahler. 2016. \href{https://doi.org/10.1111/evo.12906}{Negative-assortative mating for color in wolves}. Evolution 70:757--766.
 
+\leavevmode\vadjust pre{\hypertarget{ref-li_first_1976}{}}%
+Li, C. C. 1976. First course in population genetics. Boxwood Press, Pacific Grove, Calif.
+
 \leavevmode\vadjust pre{\hypertarget{ref-meurer_sympy:_2017}{}}%
 Meurer, A., C. P. Smith, M. Paprocki, O. Čertík, S. B. Kirpichev, M. Rocklin, A. Kumar, S. Ivanov, J. K. Moore, S. Singh, T. Rathnayake, S. Vig, B. E. Granger, R. P. Muller, F. Bonazzi, H. Gupta, S. Vats, F. Johansson, F. Pedregosa, M. J. Curry, A. R. Terrel, Š. Roučka, A. Saboo, I. Fernando, S. Kulal, R. Cimrman, and A. Scopatz. 2017. \href{https://doi.org/10.7717/peerj-cs.103}{{SymPy}: Symbolic computing in {Python}}. PeerJ Computer Science 3:e103.
 
-\leavevmode\vadjust pre{\hypertarget{ref-r_core_team_r:_2022}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-r_core_team_r_2022}{}}%
 R Core Team. 2022. \href{http://www.R-project.org/}{R: {A} {Language} and {Environment} for {Statistical} {Computing}}. R Foundation for Statistical Computing, Vienna, Austria.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ushey_reticulate_2022}{}}%

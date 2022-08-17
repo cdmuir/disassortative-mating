@@ -10,4 +10,4 @@ uri <- "https://api.zotero.org/users/5814932/collections/VPXJS8II/items"
 )
 res <- httr::GET(uri, query = .parms)
 res <- httr::content(res, as = "text", encoding = "UTF-8")
-write(res, file = "ms/disassortative-mating.bib", append = FALSE)
+write(res, file = "ms-r2/disassortative-mating.bib", append = FALSE)
