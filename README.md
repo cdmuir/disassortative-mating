@@ -2,7 +2,7 @@
 
 This repository contains source code associated with the manuscript:
 
-Muir CD. 2022. Technical comment on ['Negative-assortative mating for color in wolves']( https://doi.org/10.1111/evo.12906). Accepted at *Evolution*.
+Muir CD. 2022. Technical comment on ['Negative-assortative mating for color in wolves'](https://doi.org/10.1111/evo.12906). Accepted at *Evolution*.
 
 ## Contents
 
