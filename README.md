@@ -10,9 +10,7 @@ This repository has the following file folders:
 
 - `figures`: files for Figure 1
 - `objects`: saved objects generated from *R* code
-- `ms-r0`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files for initial submission
-- `ms-r1`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files for first revision
-- `ms-r2`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files for second revision
+- `ms`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files
 - `python`: Python scripts for all data processing and analysis
   + `check_genotype_frequencies.py` checks that genotype frequencies sum to 1 when only *kk* and *K-* genotypes are considered
   + `check_genotype_frequencies1.py` checks that genotype frequencies sum to 1 when *kk*, *Kk*, and *KK* genotypes are considered
