@@ -10,13 +10,16 @@ This repository has the following file folders:
 
 - `figures`: files for Figure 1
 - `objects`: saved objects generated from *R* code
-- `ms`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files
+- `ms-r0`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files for initial submission
+- `ms-r1`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files for first revision
+- `ms-r2`: manuscript input (e.g. `ms.Rmd` and `dissasortative-mating.bib`) and output (e.g. `ms.pdf`) files for second revision
 - `python`: Python scripts for all data processing and analysis
   + `check_genotype_frequencies.py` checks that genotype frequencies sum to 1 when only *kk* and *K-* genotypes are considered
   + `check_genotype_frequencies1.py` checks that genotype frequencies sum to 1 when *kk*, *Kk*, and *KK* genotypes are considered
   + `derive_genotype_frequencies.py` derives genotype frequencies for *kk* and *K-*
   + `derive_genotype_frequencies1.py` derives genotype frequencies for *kk*, *Kk*, and *KK* 
   + `derive_progency_frequencies.py` derives progeny frequencies
+  + `find_max_A.py` solves for max(*A*) as a function *P* in a population of monogamous pairs
   + `find_equilibrium.py` solves for *Q* at equilibrium
   + `find_max_A.py` solves for max(*A*) for mating in pairs
   + `get-sympy-version.pr` gets SymPy version
@@ -25,8 +28,9 @@ This repository has the following file folders:
   + `01_check-genotype-frequencies.R` derives genotype frequencies as in Table 1 of Hedrick *et al.* (2016)
   + `02_check-progeny-frequencies.R` derives progeny frequencies as in Table 1 of Hedrick *et al.* (2016) and finds equilibrium
   + `03_make-fig2.R` compares equilibrium for *Q* in Hedrick *et al.* (2016) and this study
-  + `04_make-fig3.R` compares equilibrium for *Q* in Hedrick *et al.* (2016) and this study
-  + `04_write-bib.R` writes the bib file
+  + `04_make-fig3.R` compares frequency of *K* through time in Hedrick *et al.* (2016) and this study
+  + `05_make-fig4.R` compares frequency of *K* versus $\Delta K$ in Hedrick *et al.* (2016) and this study
+  + `06_write-bib.R` writes the bib file
   + `function.R` contains custom functions
   + `header.R` is a header file for *R* scripts
   + `install-packages.R` is a script to install required packages
