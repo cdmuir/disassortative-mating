@@ -216,12 +216,12 @@ ggplot(df_fig, aes(A, Q, linetype = Source)) +
 
 In conclusion, the logical inconsistency in @hedrick_negative-assortative_2016 does not undermine their primary conclusion that negative-assortative mating by color may explain the distribution of genotype frequencies at the beta definsin locus in the Yellowstone population of wolves (*Canis lupus*). The new derivation here may prove useful to future research on negative-assortative mating.
 
-# Data availability
+# Data accessibility
 
-The source code is available in a public GitHub repository (https://github.com/cdmuir/disassortative-mating) and is archived on Zenodo (https://doi.org/10.5281/zenodo.7003312).
+The source code is available in a public GitHub repository (https://github.com/cdmuir/disassortative-mating) and is archived on Zenodo and Dryad.
 
 # Acknowledgements
 
-Kirk Lohmueller and two anonymous reviewers provided feedback and mathematical derviations that greatly improved this manuscript.
+Kirk Lohmueller and two anonymous reviewers provided feedback and mathematical derivations that greatly improved this manuscript.
 
 # Literature cited
